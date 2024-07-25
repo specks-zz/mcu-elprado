@@ -213,38 +213,119 @@
             <div class="col-full">
                 <h3 class="subhead">Ejemplos</h3>
                 <p></p>
-                <p>Ejemplo 1</p>                
-                <img src="images/ejemplos/ejemplo1.jpeg" width="500" height="500"/>
+                <p>Ejemplo 1</p>
+                <div align="center">
+                    <div align="center">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="radius1">Radio (r): </label>
+                                </td>
+                                <td>
+                                    <label for="velocity1">Velocidad (v): </label>
+                                </td>                        
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" id="radius1" step="any">
+                                </td>                        
+                                <td>
+                                    <input type="number" id="velocity1" step="any">
+                                </td>                        
+                            </tr> 
+                        </table>  
+                        <button onclick="calculateOrbital()">Calcular</button>
+                        <p id="orbitalResult"> 
+                    </div>
+                    <img src="images/ejemplos/ejemplo1.jpeg" width="500" height="500"/>
+                </div>
+                <br/>
                 <p>Ejemplo 2</p>
-                <p></p>
-                <img src="images/ejemplos/ejemplo2.jpeg" width="500" height="500"/>
-                <p></p>                
+                <div align="center">
+                    <div align="center">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="radius2">Radio (r): </label>
+                                </td>
+                                <td>
+                                    <label for="angularVelocity2">Velocidad Angular (ω): </label>
+                                </td>                        
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" id="radius2" step="any">
+                                </td>                        
+                                <td>
+                                    <input type="number" id="angularVelocity2" step="any">
+                                </td>                        
+                            </tr> 
+                        </table>  
+                        <button onclick="calculateDisk()">Calcular</button>
+                        <p id="diskResult"></p>
+                    </div>
+                    <img src="images/ejemplos/ejemplo2.jpeg" width="500" height="500"/>
+                </div>
+                <br/>             
                 <p>Ejemplo 3</p>
+                <div align="center">
+                    <div align="center">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="radius3">Radio (r): </label>
+                                </td>
+                                <td>
+                                    <label for="velocity3">Velocidad (v): </label>
+                                </td>                        
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" id="radius3" step="any">
+                                </td>                        
+                                <td>
+                                    <input type="number" id="velocity3" step="any">
+                                </td>                        
+                            </tr> 
+                        </table>  
+                        <button onclick="calculateTrack()">Calcular</button>
+                        <p id="trackResult"></p>
+                    </div>
+                    <img src="images/ejemplos/ejemplo3.jpeg" width="500" height="500"/>
+                </div>                
                 <p> </p>
-                <img src="images/ejemplos/ejemplo3.jpeg" width="500" height="500"/>
-                <p> </p>                
             </div>            
         </div> <!-- end section-header -->
-
-        <!--div class="row clients-outer" data-aos="fade-up">
-            <div class="col-full">
-                <div class="clients">
-                    
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/apple.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/atom.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/blackberry.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/dropbox.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/envato.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/firefox.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/joomla.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/clients/magento.png" /></a>
-                     
-                </div> 
-            </div>
-        </div--> <!-- end clients-outer -->
-
-
-
+    </section>
+    <script>
+        function calculateOrbital() {
+            const radius = parseFloat(document.getElementById('radius1').value);
+            const velocity = parseFloat(document.getElementById('velocity1').value);
+            
+            const period = (2 * Math.PI * radius) / velocity;
+            const acceleration = (velocity ** 2) / radius;
+            
+            document.getElementById('orbitalResult').textContent = 'Período (T): ' + period.toFixed(2) + 's, ' + 'Aceleración centrípeta (a): ' + acceleration.toFixed(2) + 'm/s²'
+        }
+        function calculateDisk() {
+            const radius = parseFloat(document.getElementById('radius2').value);
+            const angularVelocity = parseFloat(document.getElementById('angularVelocity2').value);
+            
+            const velocity = angularVelocity * radius;
+            const acceleration = (angularVelocity ** 2) * radius;
+            
+            document.getElementById('diskResult').textContent = 'Velocidad (v): ' + velocity.toFixed(2) + ' m/s , Aceleración centrípeta (a): ' + acceleration.toFixed(2) + 'm/s²'
+        }        
+        function calculateTrack() {
+            const radius = parseFloat(document.getElementById('radius3').value);
+            const velocity = parseFloat(document.getElementById('velocity3').value);
+            
+            const period = (2 * Math.PI * radius) / velocity;
+            const acceleration = (velocity ** 2) / radius;
+            
+            document.getElementById('trackResult').textContent = 'Período (T): ' +  period.toFixed(2) + 's, Aceleración centrípeta (a): ' + acceleration.toFixed(2) + 'm/s²'
+        }
+    </script>
     <!-- Calculadora
     ================================================== -->
 <section id='calculadora' class="s-services">
@@ -318,7 +399,6 @@ function calcularMCU() {
 		</ul>
 		</div>
             </div>
-        </div> <!-- end section-header -->
         </div> <!-- end section-header -->
 
         <!--div class="row clients-outer" data-aos="fade-up">
