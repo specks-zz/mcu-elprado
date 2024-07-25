@@ -33,6 +33,12 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <style>
+        .parrafos {
+            display: flex;
+            margin-left: 185px;
+        }
+    </style>
 </head>
 
 <body id="top">
@@ -216,26 +222,14 @@
                 <p>Ejemplo 1</p>
                 <div align="center">
                     <div align="center">
-                        <table>
-                            <tr>
-                                <td>
-                                    <label for="radius1">Radio (r): </label>
-                                </td>
-                                <td>
-                                    <label for="velocity1">Velocidad (v): </label>
-                                </td>                        
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="number" id="radius1" step="any">
-                                </td>                        
-                                <td>
-                                    <input type="number" id="velocity1" step="any">
-                                </td>                        
-                            </tr> 
-                        </table>  
+                        <div class="parrafos">
+                            <label for="radius1">Radio (r): </label>
+                            <input type="number" id="radius1" step="any">
+                            <label for="velocity1">Velocidad (v): </label>
+                            <input type="number" id="velocity1" step="any">
+                        </div>                          
                         <button onclick="calculateOrbital()">Calcular</button>
-                        <p id="orbitalResult"> 
+                        <p id="orbitalResult">
                     </div>
                     <img src="images/ejemplos/ejemplo1.jpeg" width="500" height="500"/>
                 </div>
@@ -243,24 +237,12 @@
                 <p>Ejemplo 2</p>
                 <div align="center">
                     <div align="center">
-                        <table>
-                            <tr>
-                                <td>
-                                    <label for="radius2">Radio (r): </label>
-                                </td>
-                                <td>
-                                    <label for="angularVelocity2">Velocidad Angular (ω): </label>
-                                </td>                        
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="number" id="radius2" step="any">
-                                </td>                        
-                                <td>
-                                    <input type="number" id="angularVelocity2" step="any">
-                                </td>                        
-                            </tr> 
-                        </table>  
+                        <div class="parrafos">
+                            <label for="radius2">Radio (r): </label>
+                            <input type="number" id="radius2" step="any">
+                            <label for="angularVelocity2">Velocidad Angular (ω): </label>
+                            <input type="number" id="angularVelocity2" step="any">
+                        </div>                          
                         <button onclick="calculateDisk()">Calcular</button>
                         <p id="diskResult"></p>
                     </div>
@@ -270,29 +252,17 @@
                 <p>Ejemplo 3</p>
                 <div align="center">
                     <div align="center">
-                        <table>
-                            <tr>
-                                <td>
-                                    <label for="radius3">Radio (r): </label>
-                                </td>
-                                <td>
-                                    <label for="velocity3">Velocidad (v): </label>
-                                </td>                        
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="number" id="radius3" step="any">
-                                </td>                        
-                                <td>
-                                    <input type="number" id="velocity3" step="any">
-                                </td>                        
-                            </tr> 
-                        </table>  
+                        <div class="parrafos">
+                            <label for="radius3">Radio (r): </label>
+                            <input type="number" id="radius3" step="any">
+                            <label for="velocity3">Velocidad (v): </label>
+                            <input type="number" id="velocity3" step="any">                        
+                        </div>
                         <button onclick="calculateTrack()">Calcular</button>
                         <p id="trackResult"></p>
                     </div>
                     <img src="images/ejemplos/ejemplo3.jpeg" width="500" height="500"/>
-                </div>                
+                </div>
                 <p> </p>
             </div>            
         </div> <!-- end section-header -->
